@@ -14,7 +14,8 @@
         "lint": "ng lint",
         "e2e": "ng e2e",
         "lite": "lite-server",
-        "postinstall": "ng build --prod"
+        "postinstall": "ng build --prod",
+        "deploy": "ng build --prod --base-href=/FisioterapiaFrontend/"
     },
     "private": true,
     "dependencies": {
