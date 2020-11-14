@@ -37,7 +37,7 @@
             <div class="card-body">
                 <h4 class="card-title">User Photo</h4>
 
-                <img *ngIf="!imagenTemp" [src]="usuario.img | imagen: usuario" class="w-150">
+                <img *ngIf="!imagenTemp" [src]="usuario.img | imagen: 'usuario'" class="w-150">
                 <img *ngIf="imagenTemp" [src]="imagenTemp" class="w150">
 
                 <input (change)="selectImage($event.target.files[0])" type="file">
