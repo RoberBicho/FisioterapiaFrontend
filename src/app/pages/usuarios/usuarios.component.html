@@ -2,9 +2,9 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-              
+
                 <input #input (keyup)="searchUser(input.value)" type="text" class="form-control" placeholder="Search User...">
-                
+
             </div>
         </div>
     </div>
@@ -28,12 +28,12 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-              
+
                 <h3 class="card-title"> Usuarios Registrados (<small>{{totalRegisters}}</small>)</h3>
 
                 <table class="table table-hover">
                     <thead>
-                        <tr >
+                        <tr>
                             <th>Image</th>
                             <th>Email</th>
                             <th>Name</th>
@@ -46,7 +46,7 @@
                     <tbody>
                         <tr *ngFor="let usuario of usuarios">
                             <td>
-                                <img (click)="mostrarModal(usuario._id)" [src]="usuario.img | imagen" class="img-50 img-circle pointer">
+                                <img (click)="mostrarModal(usuario._id)" [src]="usuario.img | imagen: usuario" class="img-50 img-circle pointer">
                             </td>
                             <td>{{usuario.email}}</td>
                             <td>{{usuario.nombre}}</td>
@@ -58,11 +58,11 @@
                                 </select>
                             </td>
                             <td>
-                                <label *ngIf="usuario.google" class="label label-danger">Google</label> 
-                                <label *ngIf="!usuario.google" class="label label-info">Normal</label> 
+                                <label *ngIf="usuario.google" class="label label-danger">Google</label>
+                                <label *ngIf="!usuario.google" class="label label-info">Normal</label>
                             </td>
                             <td>
-                                <button (click)="saveUser(usuario)"class="btn btn-primary">
+                                <button (click)="saveUser(usuario)" class="btn btn-primary">
                                     <i class="fa fa-save"></i>
                                 </button>
                                 <button (click)="deleteUser(usuario)" class="btn btn-danger">
@@ -73,9 +73,9 @@
                         </tr>
                     </tbody>
                 </table>
-                <button (click)= "page(-5)" class="btn btn-secondary">Anteriores
+                <button (click)="page(-5)" class="btn btn-secondary">Anteriores
                 </button>
-                <button (click)= "page(+5)" class="btn btn-secondary">Siguientes
+                <button (click)="page(+5)" class="btn btn-secondary">Siguientes
                 </button>
             </div>
         </div>

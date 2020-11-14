@@ -1,3 +1,7 @@
+import { URL_SERVICIOS } from '../config/config';
+
+const base_url = URL_SERVICIOS;
+
 export class  Usuario {
 
     constructor (
@@ -8,9 +12,19 @@ export class  Usuario {
         public role?: string, // a fuerza tienen que ser opcionales
         public google?: boolean,
         public _id?:string
-     ) {
+     ) { }
 
-
+     get imagenUrl() {
+        
+        if ( this.img.includes('https') ) {
+            return this.img;
+        }
+        
+        if ( this.img ) {
+            return `${ base_url }/uploads/usuarios/${ this.img }`;
+        } else {
+            return `${ base_url }/uploads/usuarios/no-image`;
+        }
     }
 }
 
