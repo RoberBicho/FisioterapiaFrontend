@@ -1,0 +1,78 @@
+<div id="snackbar">Descargando cita...</div>
+
+<div class="fondo-negro animated fadeIn" [(ngClass)]="modalService.ocultoCalendar">
+    <div class="modal" style="display: block;" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Escoge tu cita</h5>
+                    <button (click)="cerrarModal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <!-- le estoy asignando al string hiden la palabra oculto, que sería la clase en el css -->
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body text-center">
+
+
+                    <div id="convertoToPDF" class="card">
+                        <div class="card-body">
+                            <!-- <div class="form-material m-t-40 row">
+                                <div class="form-group col-md-6 m-t-20">
+                                    <label>Nombre:</label>
+                                    <input [(ngModel)]="modalService.nombre" type="text" class="form-control form-control-line"></div>
+                                    <p></p>
+                                <div class="form-group col-md-6 m-t-20">
+                                    <label>Fecha y Hora:</label>
+                                    <input [(ngModel)]="modalService.date" type="text" class="form-control"> </div>
+                                <div class="form-group col-md-12 m-t-20">
+                                    <label>Observaciones:</label>
+                                    <textarea class="form-control" placeholder="Escribe aquí cualquier observación..."></textarea></div>
+                            </div> -->
+
+                            <form #form="ngForm" (ngSubmit)="dateForm(form)">
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input type="text" *ngIf="usuarioService.usuario.nombre === modalService.nombre || usuarioService.usuario.role === 'ADMIN_ROLE'" [(ngModel)]="modalService.nombre" name="nombre" class="form-control" placeholder="Nombre">                                    </div>
+                                <div class="form-group">
+                                    <label>Fecha Y Hora</label>
+                                    <input type="text" [ngModel]="modalService.date | date:'medium':idioma" name="date" (ngModelChange)="modalService.date=$event" class="form-control" value="fecha">
+                                </div>
+                                <!-- <div class="form-group">
+                                <label>Fecha Y Hora</label>
+                                <input type="text" [(ngModel)]="modalService.date" name="ngDate" class="form-control" value="fecha"> {{modalService.date | date:'medium':idioma}}
+                            </div> -->
+                                <div class="form-group">
+                                    <label>Zona de dolor</label>
+                                    <textarea [(ngModel)]="modalService.zone" name="zone" class="form-control" placeholder="Ecribe en que zona sientes dolor..."></textarea>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label>Síntomas</label>
+                                    <textarea [(ngModel)]="modalService.symptoms" name="symptoms" class="form-control" placeholder="Ecribe que sientes..."></textarea>
+                                </div> -->
+                                <div class="form-group">
+                                    <label>Usuario Id</label>
+                                    <textarea [(ngModel)]="usuarioService.usuario._id" name="userId" class="form-control"></textarea>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label>Observaciones</label>
+                                    <textarea [(ngModel)]="modalService.observaciones" name="observations" class="form-control" placeholder="Ecribe tu observación..."></textarea>
+                                </div> -->
+                                <div class="modal-footer">
+
+                                    <button (click)="print()" type="button" class="btn btn-secondary" data-dismiss="modal">Print</button>
+                                    <button (click)="deleteDate()" type="button" class="btn btn-secondary" data-dismiss="modal">Borrar cita</button>
+                                    <button (click)="cerrarModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                    <button type="submit" class="btn btn-primary">Guarda la cita</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
