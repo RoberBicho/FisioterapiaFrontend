@@ -34,9 +34,9 @@
             </mat-form-field> -->
             <div class="form-group">
                 <label for="exampleFormControlInput1">Autor/Referencias</label>
-                <input [(ngModel)]="post.autor" name="autor" #autor="ngModel" type="text" [ngClass]="{'is-valid': title.valid, 'is-invalid': title.invalid}" required class="form-control" id="exampleFormControlInput1">
-                <div class="alert alert-danger" *ngIf="autor.invalid && (autor.dirty || autor.touched)">
-                    <div *ngIf="autor.errors.required">
+                <input [(ngModel)]="post.idAuthor" name="idAuthor" #idAuthor="ngModel" type="text" [ngClass]="{'is-valid': title.valid, 'is-invalid': title.invalid}" required class="form-control" id="exampleFormControlInput1">
+                <div class="alert alert-danger" *ngIf="idAuthor.invalid && (idAuthor.dirty || idAuthor.touched)">
+                    <div *ngIf="idAuthor.errors.required">
                         Introduzca una referencia por favor
                     </div>
                 </div>
