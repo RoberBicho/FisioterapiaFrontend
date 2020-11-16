@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
 
   email: string;
   rememeberme = false;
+  open: Boolean = true
 
   auth2:any;
 
@@ -68,5 +69,9 @@ export class LoginComponent implements OnInit {
       // console.log(response);
       this.router.navigate(['/dashboard'])
     })
+  }
+
+  closeInfoModal() {
+    this.open = false
   }
 }
