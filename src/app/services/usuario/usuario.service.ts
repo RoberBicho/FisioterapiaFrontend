@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 })
 export class UsuarioService {
 
+  // url = 'http://localhost:4000'
   url = 'https://fisiotbackend.herokuapp.com'
   usuario: Usuario;
   token:string;
@@ -54,7 +55,8 @@ export class UsuarioService {
     return this.http.post(_url,usuario).pipe(map(
       (resp:any) => {
         swal('Usuario creado', usuario.email, 'success');
-        return resp.usuario;
+        // console.log(resp);
+        return resp.usuarios;
       }),
       catchError(err => {
         // console.log(err.status);
