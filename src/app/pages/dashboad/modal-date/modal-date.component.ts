@@ -37,8 +37,8 @@ export class ModalDateComponent implements OnInit {
       form.value.nombre,
       form.value.date,
       form.value.zone,
-      // form.value.symptoms
-      form.value.userId
+      form.value.userId,
+      form.value.observations,
     );
 
     // console.log(date)
