@@ -13,6 +13,7 @@ export class  Usuario {
         public role?: string, // a fuerza tienen que ser opcionales
         public google?: boolean,
         public _id?:string,
+        public symptoms?: String
      ) { }
 
      get imagenUrl() {
