@@ -25,7 +25,7 @@ export class ModalService {
   eventId;
   nombre;
   date;
-  observaciones= '';
+  observations= '';
   zone = '';
   symptoms = '';
   userId = '';
