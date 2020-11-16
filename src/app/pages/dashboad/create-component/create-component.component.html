@@ -2,7 +2,36 @@
 
 </div>
 <div class="alert-box">
-    <p>{{ data.event.title }}</p>
+    <form>
+        <div class="form-group">
+            <label>Nombre</label><br>
+            <p class="form-control">{{ data.event.meta.nombre}}</p>
+        </div>
+        <div class="form-group">
+            <label>Síntomas de esta cita</label><br>
+            <p class="form-control">{{ data.event.meta.symptoms}}</p>
+        </div>
+        <div class="form-group">
+            <label>Zona de dolor</label><br>
+            <p class="form-control">{{ data.event.meta.zone}}</p>
+        </div>
+        <div class="form-group">
+            <label>Usuario Id</label><br>
+            <p>{{ data.event.meta.userid }}</p>
+        </div>
+        <div class="form-group">
+            <label>Date Id</label><br>
+            <p>{{ data.event.meta.id }}</p>
+        </div>
+        <!-- <div class="form-group">
+            <label>Síntomas</label>
+            <textarea [(ngModel)]="modalService.symptoms" name="symptoms" class="form-control" placeholder="Ecribe que sientes..."></textarea>
+        </div> -->
+        <div class="modal-footer">
+
+        </div>
+    </form>
+
     <div class="alert-box-actions">
         <button class="btn btn-primary" (click)="onClose()">Close</button>
     </div>
