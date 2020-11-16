@@ -16,6 +16,10 @@
             <p class="form-control">{{ data.event.meta.zone}}</p>
         </div>
         <div class="form-group">
+            <label>Síntomas</label>
+            <p>{{ data.event.meta.observations }}</p>
+        </div>
+        <div class="form-group">
             <label>Usuario Id</label><br>
             <p>{{ data.event.meta.userid }}</p>
         </div>
@@ -23,10 +27,6 @@
             <label>Date Id</label><br>
             <p>{{ data.event.meta.id }}</p>
         </div>
-        <!-- <div class="form-group">
-            <label>Síntomas</label>
-            <textarea [(ngModel)]="modalService.symptoms" name="symptoms" class="form-control" placeholder="Ecribe que sientes..."></textarea>
-        </div> -->
         <div class="modal-footer">
         </div>
     </form>
