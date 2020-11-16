@@ -8,10 +8,11 @@ export class  Usuario {
         public nombre: string,
         public email:string,
         public password: string,
+        public number?: Number,
         public img?: string, // ? para ponerlo como opcional. Si pongo este aquí, a partir de este, los de abajo 
         public role?: string, // a fuerza tienen que ser opcionales
         public google?: boolean,
-        public _id?:string
+        public _id?:string,
      ) { }
 
      get imagenUrl() {
