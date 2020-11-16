@@ -39,6 +39,7 @@ form: FormGroup;
     this.form = new FormGroup({ // son todos los campos que quiero controlar por el HTML
       nombre: new FormControl(null, Validators.required), // el primero es el valor por defecto, lo otro son validator que si quiero mas puedo mandar un array 
       email: new FormControl(null, [Validators.required, Validators.email]),
+      number: new FormControl(null, [Validators.required]),
       password: new FormControl(null, Validators.required),
       password2: new FormControl(null, Validators.required),
       conditions: new FormControl(false),
@@ -59,11 +60,14 @@ form: FormGroup;
       this.form.value.nombre,
       this.form.value.email,
       this.form.value.password,
+      this.form.value.number
     )
+
+    // console.log(usuario);
 
     this.usuarioService.postUser(usuario).subscribe(
       response => {
-        // console.log(response);
+        console.log(response);
         this.router.navigate( ['/login'] )
       });
 
